@@ -15,7 +15,7 @@
 # inherit from common hlte
 -include device/samsung/hlte-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := hltexx,SM-N9005,hlte,hlteskt,hltektt,SM-N900S,SM-N900K
+TARGET_OTA_ASSERT_DEVICE := hlte,hltespr,hltexx
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8974
@@ -30,6 +30,9 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 314572800
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13631488
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/hlte-common/releasetools
 
 # inherit from the proprietary version
 -include vendor/samsung/hlte/BoardConfigVendor.mk
