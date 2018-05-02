@@ -1,0 +1,2 @@
+# Radio - pinned to N9008ZMSGQB1_N9008ZMSGQB1_CHM
+lib/libsec-ril.so:vendor/lib/libsec-ril.h3g.so|f3aa0514c84addbac8d6cffc2fe6171d37578cab
