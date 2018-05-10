@@ -74,14 +74,6 @@ void gsm_properties(char const *rild_lib_variant)
     property_set("telephony.lteOnGsmDevice", "1");
 }
 
-void h3g_properties(char const *rild_lib_variant)
-{
-    set_rild_libpath(rild_lib_variant);
-
-    property_set("ro.telephony.default_network", "3");
-    property_set("telephony.lteOnGsmDevice", "0");
-}
-
 #define ISMATCH(a, b) (!strncmp((a), (b), PROP_VALUE_MAX))
 
 void init_target_properties()
@@ -99,20 +91,6 @@ void init_target_properties()
         property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N9005");
         property_override_dual("ro.product.device", "ro.vendor.product.device", "hlte");
         gsm_properties("gsm");
-    } else if (bootloader.find("N9006") == 0) {
-        /* h3gzn - China Unicom 3G */
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/h3gzn/h3g:5.0/LRX21V/N9006ZNSGQD1:user/release-keys");
-        property_override("ro.build.description", "h3gzn-user 5.0 LRX21V N9006ZNSGQD1 release-keys");
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N9006");
-        property_override_dual("ro.product.device", "ro.vendor.product.device", "h3gzn");
-        h3g_properties("h3g");
-    } else if (bootloader.find("N9008") == 0) {
-        /* h3gzm - China Mobile 3G */
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/h3gzm/h3g:5.0/LRX21V/N9008ZMSGQB1:user/release-keys");
-        property_override("ro.build.description", "h3gzm-user 5.0 LRX21V N9008ZMSGQB1 release-keys");
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N9008");
-        property_override_dual("ro.product.device", "ro.vendor.product.device", "h3gzm");
-        h3g_properties("h3g");
     } else if (bootloader.find("N900P") == 0) {
         /* hltespr - Sprint */
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/hltespr/hltespr:5.0/LRX21V/N900PVPSEPL1:user/release-keys");
